@@ -23,6 +23,18 @@ reach the interface.
 
 Requirements: DSH `>= 0.2.0-rc.2`, Node.js `>= 20`.
 
+**In one command.** `dsh plugin` is a pnpm wrapper: it clones the public repository and
+installs the pack into a profile.
+
+```bash
+dsh plugin --profile web add github:execrat1on/dsh-locale-ru#v1.0.0
+```
+
+`web` is the profile started by `dsh web` — substitute yours if it is named differently.
+It needs `git` on `PATH` (portable MinGit works on Windows). Verified: installing through
+pnpm 12.6.0 brings in `dsh-locale-ru 1.0.0` with every file, and the installed manifest
+keeps `dsh.bundle.patch`, `platform: web` and the `@deepseek-ai/dsh-client-locale` inject.
+
 **Through the plugin manager.** Settings → Plugins → install a bundle, source `GitHub`,
 repository `execrat1on/dsh-locale-ru`. The clone is done by `git`, so it must be on `PATH`.
 
@@ -126,6 +138,18 @@ absence of networking in the bundle, and the manifest fields.
 English; after, it gets Russian, and all 2588 keys resolve to their values. The DSH root is
 located automatically (argument, `DSH_ROOT`, local installs); when no DSH is around the
 test reports a skip and exits 0, so CI without a DSH checkout stays green.
+
+**Provenance of `client.js`.** It is a built file, but the build is reproducible:
+`node build.mjs` produces the byte-identical result from `client.template.js`,
+`ru/pack.source.js` and `ru/ru.json`, and `npm run assemble` rebuilds the dictionary itself
+from `ru/parts` just as exactly. This is checkable rather than asserted — the SHA256
+matches, and CI additionally runs `git diff --exit-code` after each of the two builds.
+Nothing obfuscated or binary ships in this repository.
+
+## See also
+
+* **[dsh-balance](https://github.com/execrat1on/dsh-balance)** — the DeepSeek API balance and
+  a peak-hours marker in the sidebar, installed with the same one-liner.
 
 ## License
 
