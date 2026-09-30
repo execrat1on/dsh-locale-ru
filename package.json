@@ -1,0 +1,59 @@
+{
+  "name": "dsh-locale-ru",
+  "version": "1.0.0",
+  "description": "Russian localization for the DeepSeek Harness web UI — 57 namespaces, 2588 strings, registered as a Cordis language pack",
+  "license": "MIT",
+  "author": "execrat1on (https://github.com/execrat1on)",
+  "homepage": "https://github.com/execrat1on/dsh-locale-ru#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/execrat1on/dsh-locale-ru.git"
+  },
+  "bugs": {
+    "url": "https://github.com/execrat1on/dsh-locale-ru/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "localization",
+    "locale",
+    "i18n",
+    "russian",
+    "русский"
+  ],
+  "type": "module",
+  "icon": "./icon.svg",
+  "engines": {
+    "dsh": ">=0.2.0-rc.2",
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "assemble": "node tools/assemble.mjs",
+    "test": "node test/verify.mjs && node test/dsh-runtime.mjs"
+  },
+  "meta": {
+    "title": "Russian language",
+    "description": "Translates the whole DeepSeek Harness web UI into Russian: 57 namespaces and 2588 strings, with English fallback for anything a future version adds."
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./ru/ru.json": "./ru/ru.json",
+    "./schema/keys.en.json": "./schema/keys.en.json"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-locale"]
+    }
+  }
+}

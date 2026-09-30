@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="DSH Russian language">
+  <rect x="6" y="10" width="52" height="42" rx="10" fill="#0f2b57"/>
+  <rect x="14" y="18" width="36" height="8" rx="1.5" fill="#f7f9fc"/>
+  <rect x="14" y="26" width="36" height="8" rx="1.5" fill="#2f6fd0"/>
+  <rect x="14" y="34" width="36" height="8" rx="1.5" fill="#d64545"/>
+  <circle cx="49" cy="47" r="11" fill="#2477bf" stroke="#f7f9fc" stroke-width="2.5"/>
+  <path d="M43.5 47.2 L47.3 51 L54.5 43.5" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

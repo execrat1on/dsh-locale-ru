@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Russian language",
+    "description": "Translates the whole DeepSeek Harness web UI into Russian: 57 namespaces and 2588 strings, with English fallback for anything a future version adds."
+  }
+}

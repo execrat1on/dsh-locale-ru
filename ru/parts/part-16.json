@@ -1,0 +1,19 @@
+{
+  "documentMarkdown": {
+    "viewer.label": "Просмотр Markdown",
+    "code.copy": "Копировать",
+    "code.copied": "Скопировано",
+    "footnotes": "Сноски"
+  },
+  "sidebarCodePreview": {
+    "title": "Код",
+    "copy": "Копировать",
+    "copied": "Скопировано"
+  },
+  "settings.locale": {
+    "language.title": "Язык"
+  },
+  "shortcuts.layout": {
+    "toggle": "Переключить левую боковую панель"
+  }
+}
